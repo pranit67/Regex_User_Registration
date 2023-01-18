@@ -25,6 +25,9 @@ public class UserRegistration {
         String firstName = scan.next();
         UserRegistration obj = new UserRegistration();
         System.out.println(obj.addFirstName(firstName));
-
+        System.out.println("--------------------------------");
+        System.out.println("Please Enter Last name \n(Starts with Capital and has Minimum 3 characters)");
+        String lastName = scan.next();
+        System.out.println(obj.addFirstName(lastName));
     }
 }
