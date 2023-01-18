@@ -18,6 +18,17 @@ public class UserRegistration {
         }
     }
 
+    public String addEmailID(String name) {
+        String regex = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(name);
+        if (matcher.matches()) {
+            return name;
+        } else {
+            return fail;
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Program..!");
         Scanner scan = new Scanner(System.in);
@@ -29,5 +40,11 @@ public class UserRegistration {
         System.out.println("Please Enter Last name \n(Starts with Capital and has Minimum 3 characters)");
         String lastName = scan.next();
         System.out.println(obj.addFirstName(lastName));
+        System.out.println("--------------------------------");
+        System.out.println("Please Enter Email ID ");
+        String emailId = scan.next();
+        System.out.println(obj.addEmailID(emailId));
+        System.out.println("--------------------------------");
+
     }
 }
